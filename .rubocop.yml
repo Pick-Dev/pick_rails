@@ -1,0 +1,76 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+    - 'lib/templates/**/*'
+    - 'lib/generators/templates/**/*'
+    - 'node_modules/**/*'
+  TargetRubyVersion: 2.5
+
+Rails:
+  Enabled: true
+
+# Lint
+Lint/Debugger:
+  AutoCorrect: false
+
+# Metrics
+Metrics/BlockNesting:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+# Styles
+Style/EndOfLine:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/CommentAnnotation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/RedundantFreeze:
+  Enabled: false

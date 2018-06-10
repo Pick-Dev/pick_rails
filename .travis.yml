@@ -1,0 +1,27 @@
+sudo: false
+cache: bundler
+language: ruby
+dist: trusty
+rvm:
+  - 2.5.1
+env:
+  global:
+    - TEST_QUEUE_WORKERS=2
+  matrix:
+    - 'TASK=spec'
+    - 'TASK=ascii_spec'
+    - 'TASK=internal_investigation'
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+  fast_finish: true
+before_install:
+  - gem update --system
+  - gem update --remote bundler
+install:
+  - bundle install --retry=3
+script:
+  - ruby .travis.rb
+# addons:
+#   code_climate:
+#     repo_token: a11b66bfbb1acdf220d5cb317b2e945a986fd85adebe29a76d411ad6d74ec31f
