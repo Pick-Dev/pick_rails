@@ -13,21 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  collation: utf8mb4_unicode_ci
   url: <%= ENV["MYSQL_URL"] %>
 
 development:
-  <<: *defaults
+  <<: *default
   database: <%= ENV["MYSQL_DATABASE"] %>_development
 
 test:
-  <<: *defaults
+  <<: *default
   database: <%= ENV["MYSQL_DATABASE"] %>_test
 
 staging:
-  <<: *defaults
+  <<: *default
   database: <%= ENV["MYSQL_DATABASE"] %>_staging
 
 production:
-  <<: *defaults
+  <<: *default
   database: <%= ENV["MYSQL_DATABASE"] %>_production
