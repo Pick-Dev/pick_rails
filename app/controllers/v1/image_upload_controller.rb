@@ -1,8 +1,10 @@
 class V1::ImageUploadController < ApplicationController
-  before_action :set_user, only: :update
+  before_action :set_user, only: :create
 
-  def update
-   @user.photos.create(params[:image])
+  def create
+    binding.pry
+    @user.photos.create(image: params[:image])
+    render json: @user.photos.last.image.url
   end
 
   private
